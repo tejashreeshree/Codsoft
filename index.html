@@ -2,79 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Advanced Calculator</title>
+    <title>Online Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="calculator">
-    <input type="text" id="display" class="display" value="0" disabled>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h2>Online Portfolio</h2>
+            <p>Just another My Blog site</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT ME</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">SKILL</a></li>
+                <li><a href="#">TESTIMONIAL</a></li>
+                <li><a href="#">EXPERIENCE</a></li>
+                <li><a href="#">WORKS</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="buttons">
-        <button class="operator" onclick="clearDisplay()">C</button>
-        <button class="operator" onclick="backspace()">⌫</button>
-        <button class="operator" onclick="appendOperator('/')">÷</button>
-        <button class="operator" onclick="appendOperator('*')">×</button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>S TEJASHREE</h1>
+            <p>
 
-        <button onclick="appendNumber('7')">7</button>
-        <button onclick="appendNumber('8')">8</button>
-        <button onclick="appendNumber('9')">9</button>
-        <button class="operator" onclick="appendOperator('-')">−</button>
+I am a passionate BCA student with a strong interest in programming and web development. I have basic knowledge of languages like C, C++, Java, and Python, along with HTML and CSS. I am eager to learn new technologies and build innovative solutions to grow in the IT field.
+            </p>
+            <button class="btn">Hire Me</button>
+        </div>
+    </section>
 
-        <button onclick="appendNumber('4')">4</button>
-        <button onclick="appendNumber('5')">5</button>
-        <button onclick="appendNumber('6')">6</button>
-        <button class="operator" onclick="appendOperator('+')">+</button>
-
-        <button onclick="appendNumber('1')">1</button>
-        <button onclick="appendNumber('2')">2</button>
-        <button onclick="appendNumber('3')">3</button>
-        <button class="equal" onclick="calculate()">=</button>
-
-        <button class="zero" onclick="appendNumber('0')">0</button>
-        <button onclick="appendNumber('.')">.</button>
-    </div>
-</div>
-
-<script>
-    let display = document.getElementById("display");
-
-    function appendNumber(number) {
-        if (display.value === "0" && number !== ".") {
-            display.value = number;
-        } else {
-            display.value += number;
-        }
-    }
-
-    function appendOperator(operator) {
-        let lastChar = display.value.slice(-1);
-        if ("+-*/".includes(lastChar)) {
-            display.value = display.value.slice(0, -1) + operator;
-        } else {
-            display.value += operator;
-        }
-    }
-
-    function clearDisplay() {
-        display.value = "0";
-    }
-
-    function backspace() {
-        display.value = display.value.slice(0, -1);
-        if (display.value === "") {
-            display.value = "0";
-        }
-    }
-
-    function calculate() {
-        try {
-            display.value = eval(display.value);
-        } catch {
-            display.value = "Error";
-        }
-    }
-</script>
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-img">
+            <img src="profile.jpeg" alt="Profile">
+        </div>
+        <div class="about-content">
+            <h2>ABOUT ME</h2>
+            <p>
+                I am Developer blends expertise with industry know-how to guide
+                your next property development.
+            </p>
+            <p>
+                Software Developers use development languages and tools to write,
+                edit, maintain and test software applications. They follow SDLC
+                to plan, design, build and deploy applications.
+            </p>
+            <!-- Resume Section -->
+    <section class="resume" id="resume">
+        <h2>Resume</h2>
+        <p>Click below to download my resume in PDF format.</p>
+        <a href="resume.pdf" class="btn">Download Resume</a>
+    </section>
+        </div>
+    </section>
 
 </body>
 </html>
